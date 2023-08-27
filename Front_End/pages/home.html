@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+  <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.css">
+</head>
+<body>
+<header id="nav_bar">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary"
+       style="z-index: 1; background-color: #e3f2fd; height: 60px; box-shadow: 0px 1px 7px -4px black;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="#">
+          <img src="../favicon.png" alt="" width="30" height="30"
+               class="d-inline-block align-text-top">
+          SPA POS
+        </a>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="home.html" id="home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="order.html" id="order">Order</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="customer.html" id="customer">Customer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="item.html" id="store">Store</a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+                <a class="nav-link" href="../index.html" id="log_out"><i class="fa-solid fa-power-off fa-xl"></i>Log Out</a>
+            </span>
+      </div>
+    </div>
+  </nav>
+</header><!--navbar-->
+<section id="home_section">
+  <div class="container-fluid row position-absolute start-0 end-0 bottom-0 m-auto" style="top: 60px">
+    <section class="row align-content-center justify-content-center">
+      <div class="col-12 col-sm-5 col-lg-4 col-xl-3 shadow-lg"
+           style="height: 200px; border-radius: 30px;">
+        <div class="row text-center align-content-center">
+          <div class="col-1"></div>
+          <div class="col-10">
+            <div class="row">
+              <div class="col-12" style="border-bottom: 2px solid black; height: 50px">
+                <h1>Customers</h1>
+              </div>
+              <div class="col-12" style="height: 150px;">
+                <div class="row h-75 text-center justify-content-center align-content-center">
+                  <h1 class="display-1"><span id="customer-count">0</span></h1>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-1"></div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-2" style="height: 50px;"></div>
+      <div class="col-12 col-sm-5 col-lg-4 col-xl-3 shadow-lg"
+           style="height: 200px; border-radius: 30px;">
+        <div class="row text-center align-content-center">
+          <div class="col-1"></div>
+          <div class="col-10">
+            <div class="row">
+              <div class="col-12" style="border-bottom: 2px solid black; height: 50px">
+                <h1>Items</h1>
+              </div>
+              <div class="col-12" style="height: 150px;">
+                <div class="row h-75 text-center justify-content-center align-content-center">
+                  <h1 class="display-1"><span id="item-count">0</span></h1>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-1"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+</section><!--home-->
+
+<script src="../assets/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/js/jquery-3.7.0.min.js"></script>
+</body>
+</html>

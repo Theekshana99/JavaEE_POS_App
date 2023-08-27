@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Item Form</title>
+    <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.css">
+</head>
+<body>
+<header id="nav_bar">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary"
+         style="z-index: 1; background-color: #e3f2fd; height: 60px; box-shadow: 0px 1px 7px -4px black;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="#">
+                    <img src="../favicon.png" alt="" width="30" height="30"
+                         class="d-inline-block align-text-top">
+                    SPA POS
+                </a>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="home.html" id="home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="order.html" id="order">Order</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="customer.html" id="customer">Customer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="item.html" id="store">Store</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+                <a class="nav-link" href="../index.html" id="log_out"><i class="fa-solid fa-power-off fa-xl"></i>Log Out</a>
+            </span>
+            </div>
+        </div>
+    </nav>
+</header><!--navbar-->
+<section id="store_section">
+    <div class="container-fluid position-absolute start-0 end-0" style="top: 100px;">
+        <section class="row">
+            <div class="col"></div>
+            <div class="col-10">
+                <div class="shadow row  text-center justify-content-center align-items-center"
+                     style="background-color: white; border-radius: 30px">
+                    <div class="col-sm-12 col-md-8">
+                        <nav class="navbar justify-content-center">
+                            <form class="d-flex flex-column flex-sm-row ubFt" role="search">
+                                <input id="itemSearchBar" class="form-control me-1" style="width: 250px" type="search"
+                                       placeholder="Input Code Or Name"
+                                       aria-label="Search">
+                                <button id="itemSearchButton" class="btn btn-outline-info m-1" type="button">Search
+                                </button>
+                                <button id="itemSearchClear" class="btn btn-outline-secondary m-1" type="button">Clear
+                                </button>
+                            </form><!--form-->
+                        </nav>
+                    </div><!--search bar-->
+                    <div class="col-sm-12 col-md-4">
+                        <nav class="navbar justify-content-center">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    id="addNewItem" data-bs-target="#newItem">Add
+                            </button>
+                        </nav><!--button-->
+                        <div class="modal fade" id="newItem" data-bs-backdrop="static" data-bs-keyboard="false"
+                             tabindex="-1" aria-labelledby="newItemLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header" style="background-color: #006aff; color: white">
+                                        <h1 class="modal-title fs-5" id="newItemLabel">New Item</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                    </div><!--title-->
+                                    <div class="modal-body">
+                                        <form id="item-form" class="row g-3 text-start">
+                                            <div class="col-12">
+                                                <label for="inputItemCode" class="form-label">Item Code</label>
+                                                <input name="code" type="text" class="form-control" id="inputItemCode"
+                                                       placeholder="Input Item Code">
+                                                <p id="inputItemCodeAlert" class="m-0"
+                                                   style="font-size: 10px; color: red"></p>
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="inputItemName" class="form-label">Item Name</label>
+                                                <input name="name" type="text" class="form-control" id="inputItemName"
+                                                       placeholder="Input Item Name">
+                                                <p id="inputItemNameAlert" class="m-0"
+                                                   style="font-size: 10px; color: red"></p>
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="inputItemPrice" class="form-label">Item Price</label>
+                                                <input name="price" type="text" class="form-control" id="inputItemPrice"
+                                                       placeholder="Input Item Price">
+                                                <p id="inputItemPriceAlert" class="m-0"
+                                                   style="font-size: 10px; color: red"></p>
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="inputItemQuantity" class="form-label">Item Quantity</label>
+                                                <input name="qty" type="text" class="form-control"
+                                                       id="inputItemQuantity"
+                                                       placeholder="Input Item Quantity">
+                                                <p id="inputItemQTYAlert" class="m-0"
+                                                   style="font-size: 10px; color: red"></p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                                                    Close
+                                                </button>
+                                                <button id="addNewItemClearButton" type="button"
+                                                        class="btn btn-warning">Clear
+                                                </button>
+                                                <button id="save-item" type="button" class="btn btn-primary">Save
+                                                </button>
+                                            </div>
+                                        </form><!--Item form-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!--modal-->
+                    </div><!--button new-->
+                    <div class="">
+                        <!--
+                                                <nav class="navbar justify-content-center">
+                                                    <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                                                            data-bs-target="#updateItem">Update
+                                                    </button>
+                                                </nav>
+                        -->
+                        <div class="modal fade" id="updateItem" data-bs-backdrop="static" data-bs-keyboard="false"
+                             tabindex="-1" aria-labelledby="newItemLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header" style="background-color: #006aff; color: white">
+                                        <h1 class="modal-title fs-5" id="updateItemLabel">Update Item</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                    </div><!--header-->
+                                    <div class="modal-body">
+                                        <form class="row g-3 text-start">
+                                            <div class="col-12">
+                                                <label for="inputUpdateItemCode" class="form-label">Item Code</label>
+                                                <input name="code" type="text" class="form-control"
+                                                       id="inputUpdateItemCode"
+                                                       placeholder="Input Item Code">
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="inputUpdateItemName" class="form-label">Item Name</label>
+                                                <input name="name" type="text" class="form-control"
+                                                       id="inputUpdateItemName"
+                                                       placeholder="Input Item Name">
+                                                <p id="inputUpdateItemNameAlert" class="m-0"
+                                                   style="font-size: 10px; color: red"></p>
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="inputUpdateItemPrice" class="form-label">Item Price</label>
+                                                <input name="price" type="text" class="form-control"
+                                                       id="inputUpdateItemPrice"
+                                                       placeholder="Input Item Price">
+                                                <p id="inputUpdateItemPriceAlert" class="m-0"
+                                                   style="font-size: 10px; color: red"></p>
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="inputUpdateItemQuantity" class="form-label">Item
+                                                    Quantity</label>
+                                                <input name="qty" type="text" class="form-control"
+                                                       id="inputUpdateItemQuantity"
+                                                       placeholder="Input Item Quantity">
+                                                <p id="inputUpdateItemQTYAlert" class="m-0"
+                                                   style="font-size: 10px; color: red"></p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                                                    Close
+                                                </button>
+                                                <button type="button" class="btn btn-warning">Clear</button>
+                                                <button id="itemUpdateButton" type="button" class="btn btn-primary">
+                                                    Update
+                                                </button>
+                                            </div><!--footer-->
+                                        </form><!--customer form-->
+                                    </div><!--body-->
+                                </div>
+                            </div>
+                        </div><!--modal-->
+                    </div><!--button update-->
+                    <!--
+                                        <div class="col-4 col-sm-3 col-lg">
+                                            <nav class="navbar justify-content-center">
+                                                <button type="button" class="btn btn-danger" id="deleteItem">Delete</button>
+                                            </nav>
+                                        </div>&lt;!&ndash;button delete&ndash;&gt;
+                    -->
+                </div>
+                <div class="col-12" style="height: 25px"></div>
+                <div class="row text-center justify-content-center align-content-center shadow-lg"
+                     style="border-radius: 30px">
+                    <table class="col-12 table table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th>Item Code</th>
+                            <th>Item Name</th>
+                            <th>Item Price</th>
+                            <th>Item Quantity</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody id="item-table-body">
+
+                        </tbody>
+                    </table>
+                </div><!--table-->
+            </div>
+            <div class="col"></div>
+        </section><!--search bar and buttons-->
+    </div><!--body-->
+</section><!--item-->
+
+<script src="../assets/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/js/jquery-3.7.0.min.js"></script>
+<script src="../controllers/itemFormController.js"></script>
+</body>
+</html>
